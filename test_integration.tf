@@ -1,1 +1,2 @@
-development :Now the file has more contentstaging :Now the file has more content
+development :Now the file has more content
+#promoting code base from development==>staging
