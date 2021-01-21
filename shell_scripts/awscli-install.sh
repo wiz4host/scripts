@@ -1,11 +1,12 @@
 #########################################################################
 #     This script runs at Redhat/centos and Ubuntu Systems platform     #
-#     It install aws-cli using python3.8 and pip3.8                     #
+#     It install Python3 as alternate version of python                 #
+#     It install aws-cli using python3(pip3)                            #
 #########################################################################
 
 #!/bin/bash
-# Install AWS-CLI with Python3
 
+#Define Python Version here
 PythonVer=3.6.7
 PythonVerMajor=PythonVerMajor=$(echo $PythonVer|cut -c -3)
 echo $PythonVerMajor
@@ -51,9 +52,6 @@ for pkg in ${pkgarr[@]}
  do
   sudo $osinstaller -y install $pkg|grep -w 'Package'
  done
-
-updatedb
-mkdir -p /opt/lab/shell_script
 
 
 #Step2: Install and configure Python3
