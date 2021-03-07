@@ -13,8 +13,8 @@ echo $PythonVerMajor
 
 
 #STEP1: Install dependency for baking python source code
-pkgarrcentos=( gcc openssl-devel bzip2-devel libffi-devel )
-pkgarrubuntu=( build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev )
+pkgarrcentos=( gcc openssl-devel bzip2-devel libffi-devel make)
+pkgarrubuntu=( build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev make)
 updaterepo="y"
 
 #grep linux  OS  type
