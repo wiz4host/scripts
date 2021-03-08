@@ -1,0 +1,35 @@
+FROM centos:8
+
+ENV PythonVer=3.6.7
+ENV PythonVerMajor=3
+ENV PATH="/root/.local/bin:${PATH}"
+
+
+RUN yum install -y gcc openssl-devel bzip2-devel libffi-devel make
+
+
+#Step2: Install and configure Python3
+RUN cd /opt/ &&\
+    curl -O https://www.python.org/ftp/python/${PythonVer}/Python-${PythonVer}.tgz &&\
+    tar -xzf Python-${PythonVer}.tgz &&\
+    cd Python-${PythonVer}/ &&\
+    ./configure --enable-optimizations &&\
+    cd /opt/Python-${PythonVer}/ &&\
+    /usr/bin/make altinstall
+
+
+RUN ln -s /usr/local/bin/python3.6 /usr/local/bin/python3 &&\
+    python3.6 --version
+
+
+#Step3: Install pip3
+RUN cd ~ &&\
+    curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" &&\
+    python${PythonVerMajor} get-pip.py --user &&\
+    pip${PythonVerMajor} --version
+
+RUN /usr/local/bin/python3 -m pip install --upgrade pip
+
+#Print Final Versions
+RUN  python${PythonVerMajor} --version &&\
+     pip${PythonVerMajor} --version
