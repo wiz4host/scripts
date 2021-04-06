@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "id": "sshkey-abc",
+      "type": "ssh-keys",
+      "attributes": {
+        "name": "team-abc"
+      },
+      "links": {
+        "self": "/api/v2/ssh-keys/sshkey-abc"
+      }
+    },
+    {
+      "id": "sshkey-xyz",
+      "type": "ssh-keys",
+      "attributes": {
+        "name": "team-xyz"
+      },
+      "links": {
+        "self": "/api/v2/ssh-keys/sshkey-xyz"
+      }
+    }
+  ]
+}
