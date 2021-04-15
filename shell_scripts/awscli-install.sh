@@ -50,7 +50,7 @@ echo +++++++++++++++++++++++++++++++++++++++++++INSTALL Package+++++++++++++++++
 
 for pkg in ${pkgarr[@]}
  do
-  sudo $osinstaller -y install $pkg|grep -w 'Package'
+  sudo $osinstaller -y install $pkg
  done
 
 
